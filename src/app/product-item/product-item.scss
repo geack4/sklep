@@ -1,0 +1,40 @@
+.product {
+  border: 3px dashed darkgray;
+  margin: 5px;
+  padding: 5px;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.cena {
+  font-weight: 900;
+  text-decoration: underline;
+  font-size: 30px;
+  padding: 0;
+  margin: 5px;
+}
+
+button {
+  all: unset;
+  margin: 10px;
+  padding: 5px 15px;
+  background-color: gold;
+  border-radius: 10px;
+  border: 4px goldenrod solid;
+  cursor: pointer;
+  transition: 300ms ease-out;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 5px rgba($color: #000000, $alpha: 0.25);
+}
+
+button:active {
+  border-color: rgb(150, 113, 20);
+  background-color: rgb(150, 113, 20);
+  transform: translateY(2px);
+}

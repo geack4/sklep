@@ -1,0 +1,6 @@
+<h2>Produkty</h2>
+<div class="product-list">
+  @for (product of products; track product.id) {
+    <app-product-item [product]="product" (addToCart)="addProduct($event)"> </app-product-item>
+  }
+</div>
