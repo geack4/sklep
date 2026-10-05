@@ -6,7 +6,9 @@
   @for (product of cart; track $index) {
     <p class="product">
       {{ product.name }} {{ product.price }} zł
-      <button (click)="removeProduct(product)"><mat-icon>close</mat-icon></button>
+      <button matIconButton (click)="removeProduct(product)">
+        <mat-icon>delete</mat-icon>
+      </button>
     </p>
   }
 

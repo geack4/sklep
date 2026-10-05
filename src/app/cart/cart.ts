@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { MatIconButton } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-cart',
-  imports: [MatIconModule],
+  imports: [MatIconModule, MatIconButton],
   templateUrl: './cart.html',
   styleUrl: './cart.scss',
 })
