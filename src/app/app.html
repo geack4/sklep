@@ -1,11 +1,10 @@
-<app-product-list
-  [products]="products"
-  (addToCart)="addProductToCart($event)">
-</app-product-list>
+<app-product-list [products]="products" (addToCart)="addProductToCart($event)"> </app-product-list>
 
-<hr>
+<hr />
 
 <app-cart
   [cart]="cart"
-  (removeFromCart)="removeProductFromCart($event)">
+  (removeFromCart)="removeProductFromCart($event)"
+  (changeProductAmount)="changeProductAmount($event)"
+>
 </app-cart>

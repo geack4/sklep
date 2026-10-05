@@ -3,10 +3,27 @@
 @if (cart.length === 0) {
   <p>Koszyk jest pusty.</p>
 } @else {
-  @for (product of cart; track $index) {
+  @for (item of cart; track $index) {
     <p class="product">
-      {{ product.name }} {{ product.price }} zł
-      <button matIconButton (click)="removeProduct(product)">
+      {{ item.product.name }} {{ item.product.price }} zł
+      <button
+        class="numberChange"
+        matIconButton
+        style="margin-left: 15px"
+        (click)="changeAmount(item.product, 1)"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+      <span class="number">{{ item.count }}</span>
+      <button
+        class="numberChange"
+        matIconButton
+        style="margin-right: 10px"
+        (click)="changeAmount(item.product, -1)"
+      >
+        <mat-icon>remove</mat-icon>
+      </button>
+      <button class="delete" matIconButton (click)="removeProduct(item)">
         <mat-icon>delete</mat-icon>
       </button>
     </p>

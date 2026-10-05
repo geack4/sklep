@@ -12,12 +12,16 @@ export class CartComponent {
   @Input() cart: any[] = [];
 
   @Output() removeFromCart = new EventEmitter<any>();
+  @Output() changeProductAmount = new EventEmitter<any>();
 
   removeProduct(product: any) {
     this.removeFromCart.emit(product);
   }
 
   getTotal() {
-    return this.cart.reduce((sum, product) => sum + product.price, 0);
+    return this.cart.reduce((sum, item) => sum + item.product.price, 0);
+  }
+  changeAmount(product: any, amount: number) {
+    this.changeProductAmount.emit({ product, amount });
   }
 }
