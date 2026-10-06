@@ -1,6 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { StoreService } from '../store';
 
 @Component({
   selector: 'app-cart',
@@ -9,12 +10,14 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './cart.scss',
 })
 export class CartComponent {
-  @Input() cart: any[] = [];
-
   @Output() removeFromCart = new EventEmitter<any>();
   @Output() changeProductAmount = new EventEmitter<any>();
 
+  store = inject(StoreService);
+  cart = this.store.cart;
+
   removeProduct(product: any) {
+    console.log(product);
     this.removeFromCart.emit(product);
   }
 

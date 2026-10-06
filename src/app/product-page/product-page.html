@@ -1,0 +1,7 @@
+<button mat-icon-button routerLink="/" class="powrot"><mat-icon>arrow_back</mat-icon></button>
+<section>
+  <h2>{{ product?.name }}</h2>
+  <img src="{{ product?.img }}" alt="{{ product?.name }}" width="400px" />
+  <p>{{ product?.desc }}</p>
+  <button (click)="dodaj()">Dodaj Do Koszyka</button>
+</section>

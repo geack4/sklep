@@ -1,13 +1,15 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { ProductItemComponent } from '../product-item/product-item';
+import { StoreService } from '../store';
 
 @Component({
   selector: 'app-product-list',
   imports: [ProductItemComponent],
   templateUrl: './product-list.html',
-  styleUrl: './product-list.scss'
+  styleUrl: './product-list.scss',
 })
 export class ProductListComponent {
+  store = inject(StoreService);
 
   @Input() products: any[] = [];
 

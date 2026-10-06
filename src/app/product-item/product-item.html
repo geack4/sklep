@@ -2,5 +2,5 @@
   <h3>{{ product.name }}</h3>
   <p class="cena">{{ product.price }} zł</p>
 
-  <button (click)="addProduct()">Dodaj do koszyka</button>
+  <button [routerLink]="['/product', product.id]">Zobacz</button>
 </div>

@@ -1,0 +1,27 @@
+.powrot {
+  margin: 10px;
+  width: 44px;
+  height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background-color: white;
+  border: 3px solid #536878;
+  color: #536878;
+  transition: 300ms;
+  cursor: pointer;
+}
+.powrot:hover {
+  transform: translateY(-3px);
+  border-color: #91a3b0;
+  color: #91a3b0;
+}
+
+.powrot:active {
+  transform: translateY(2px);
+  background-color: grey;
+}
