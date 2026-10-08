@@ -39,4 +39,8 @@ export class StoreService {
       )
       .filter((item) => item.count > 0);
   }
+
+  getTotal() {
+    return this.cart.reduce((sum, item) => sum + item.product.price, 0);
+  }
 }

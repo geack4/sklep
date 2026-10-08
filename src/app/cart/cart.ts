@@ -2,10 +2,11 @@ import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { StoreService } from '../store';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
-  imports: [MatIconModule, MatIconButton],
+  imports: [MatIconModule, MatIconButton, RouterLink],
   templateUrl: './cart.html',
   styleUrl: './cart.scss',
 })
@@ -21,9 +22,6 @@ export class CartComponent {
     this.removeFromCart.emit(product);
   }
 
-  getTotal() {
-    return this.cart.reduce((sum, item) => sum + item.product.price, 0);
-  }
   changeAmount(product: any, amount: number) {
     this.changeProductAmount.emit({ product, amount });
   }

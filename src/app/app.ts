@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { ProductListComponent } from './product-list/product-list';
 import { CartComponent } from './cart/cart';
 import { RouterOutlet } from '@angular/router';
+import { Menu } from './menu/menu';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Menu],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

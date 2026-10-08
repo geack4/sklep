@@ -1,6 +1,14 @@
 <div class="product">
   <h3>{{ product.name }}</h3>
+  <div class="imageBox">
+    <img src="{{ product.img }}" alt="{{ product.name }}" height="100px" />
+  </div>
   <p class="cena">{{ product.price }} zł</p>
 
-  <button [routerLink]="['/product', product.id]">Zobacz</button>
+  <p class="actions">
+    <button [routerLink]="['/product', product.id]" class="zobacz">Zobacz</button>
+    <button mat-icon-button class="matIcon" (click)="dodaj()">
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+  </p>
 </div>

@@ -1,0 +1,21 @@
+<button mat-icon-button routerLink="/" class="powrot-button">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<main>
+  <section>
+    @if (this.store.getTotal() !== 0) {
+      <aside>
+        <app-cart></app-cart>
+      </aside>
+      <aside>
+        <h2>Do Zapłaty</h2>
+        <p>{{ this.store.getTotal() }}</p>
+      </aside>
+    } @else {
+      <article>
+        <p>Koszyk jest pusty</p>
+        <button routerLink="/">Wróć do strony produktów</button>
+      </article>
+    }
+  </section>
+</main>

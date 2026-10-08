@@ -1,7 +1,16 @@
-<button mat-icon-button routerLink="/" class="powrot"><mat-icon>arrow_back</mat-icon></button>
-<section>
-  <h2>{{ product?.name }}</h2>
-  <img src="{{ product?.img }}" alt="{{ product?.name }}" width="400px" />
-  <p>{{ product?.desc }}</p>
-  <button (click)="dodaj()">Dodaj Do Koszyka</button>
-</section>
+<div class="product">
+  <button mat-icon-button routerLink="/" class="powrot-button">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <section>
+    <h1>{{ product?.name }}</h1>
+    <div class="imageBox">
+      <img src="{{ product?.img }}" alt="{{ product?.name }}" />
+    </div>
+    <button (click)="dodaj()" class="buyButton">Dodaj Do Koszyka</button>
+    @if (product?.desc) {
+      <h2>Opis</h2>
+      <p>{{ product?.desc }}</p>
+    }
+  </section>
+</div>
