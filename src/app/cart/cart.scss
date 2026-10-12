@@ -1,6 +1,93 @@
 .cart {
   text-align: center;
 }
-hr {
-  border-bottom: 2px black solid;
+
+.product {
+  box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  border-radius: 8px;
+  margin: 0 10px;
+  padding: 0;
+  width: 38px !important;
+  height: 38px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  transition: 300ms;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 5px rgba($color: #000000, $alpha: 0.2);
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+.numberChange {
+  border: 3px solid var(--dark-color);
+  color: var(--dark-color);
+  background-color: var(--lighter-color);
+}
+
+.numberChange:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.numberChange:active {
+  color: var(--dark-color);
+  background-color: var(--primary-color);
+}
+
+.number {
+  width: 38px; // match the buttons if you want them equal
+  height: 38px;
+  box-sizing: border-box;
+  border: 3px solid var(--dark-color);
+  display: inline-flex;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0;
+  padding: 0;
+}
+
+.productName {
+  font-size: 18px;
+}
+.price {
+  font-weight: 900;
+}
+
+.delete {
+  border: 3px solid var(--tame-red);
+  color: white;
+  background-color: var(--tame-red);
+}
+
+.delete:hover {
+  background-color: white;
+  color: var(--tame-red);
+}
+.delete:active {
+  transform: translateY(2px);
+  background-color: var(--dark-red);
+  border-color: var(--dark-red);
+  color: whitesmoke;
 }

@@ -33,14 +33,15 @@ export class StoreService {
   changeProductAmount(params: any) {
     const { product, amount } = params;
 
-    this.cart = this.cart
+    const temp = this.cart
       .map((item) =>
         item.product.id === product.id ? { ...item, count: item.count + amount } : item,
       )
       .filter((item) => item.count > 0);
+    this.cart = temp;
   }
 
   getTotal() {
-    return this.cart.reduce((sum, item) => sum + item.product.price, 0);
+    return this.cart.reduce((sum, item) => sum + item.product.price * item.count, 0);
   }
 }

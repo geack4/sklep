@@ -4,27 +4,31 @@
   @if (cart.length !== 0) {
     @for (item of cart; track $index) {
       <p class="product">
-        {{ item.product.name }} {{ item.product.price }} zł
-        <button
-          class="numberChange"
-          matIconButton
-          style="margin-left: 15px"
-          (click)="changeAmount(item.product, 1)"
-        >
-          <mat-icon>add</mat-icon>
-        </button>
-        <span class="number">{{ item.count }}</span>
-        <button
-          class="numberChange"
-          matIconButton
-          style="margin-right: 10px"
-          (click)="changeAmount(item.product, -1)"
-        >
-          <mat-icon>remove</mat-icon>
-        </button>
-        <button class="delete" matIconButton (click)="removeProduct(item)">
-          <mat-icon>delete</mat-icon>
-        </button>
+        <span class="productName">
+          {{ item.product.name }} <span class="price">{{ item.product.price }} zł</span>
+        </span>
+        <span class="counter">
+          <button
+            class="numberChange"
+            matIconButton
+            style="margin-left: 15px"
+            (click)="changeAmount(item.product, 1)"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+          <span class="number">{{ item.count }}</span>
+          <button
+            class="numberChange"
+            matIconButton
+            style="margin-right: 10px"
+            (click)="changeAmount(item.product, -1)"
+          >
+            <mat-icon>remove</mat-icon>
+          </button>
+          <button class="delete" matIconButton (click)="removeProduct(item)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </span>
       </p>
     }
   }

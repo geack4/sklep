@@ -15,14 +15,16 @@ export class CartComponent {
   @Output() changeProductAmount = new EventEmitter<any>();
 
   store = inject(StoreService);
-  cart = this.store.cart;
+  get cart() {
+    return this.store.cart;
+  }
 
   removeProduct(product: any) {
     console.log(product);
-    this.removeFromCart.emit(product);
+    this.store.removeProductFromCart(product);
   }
 
   changeAmount(product: any, amount: number) {
-    this.changeProductAmount.emit({ product, amount });
+    this.store.changeProductAmount({ product, amount });
   }
 }

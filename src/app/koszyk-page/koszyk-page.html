@@ -7,9 +7,14 @@
       <aside>
         <app-cart></app-cart>
       </aside>
-      <aside>
+      <aside class="payment">
         <h2>Do Zapłaty</h2>
-        <p>{{ this.store.getTotal() }}</p>
+        <p class="kwota">{{ this.store.getTotal() }}zł</p>
+        <p>
+          Kod rabatowy
+          <input type="text" name="rabat" id="rabat" placeholder="XXXXXX" maxlength="6" />
+        </p>
+        <button class="kup">Zapłać</button>
       </aside>
     } @else {
       <article>
