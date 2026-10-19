@@ -1,0 +1,39 @@
+<main>
+  <aside>
+    <article>
+      {{ this.store.getTotal() }}
+    </article>
+    <article>
+      @for (item of this.store.cart; track $index) {
+        <p>{{ item.product.name }} {{ item.product.price }} x{{ item.count }}</p>
+      }
+    </article>
+  </aside>
+  <aside>
+    <p>
+      Matoda płatności:
+      <select (change)="onChange($event)">
+        <option value="blik" [selected]="paymentMethod() === 'blik'">BLIK</option>
+        <option value="card" [selected]="paymentMethod() === 'card'">Karta</option>
+      </select>
+    </p>
+    @if (paymentMethod() === 'blik') {
+      <p>
+        Kod BLIK: <input type="text" name="blik" id="blik" maxlength="6" placeholder="XXX XXX" />
+      </p>
+    }
+    @if (paymentMethod() === 'card') {
+      <p>
+        Numer karty:
+        <input type="text" name="numerKarty" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" />
+      </p>
+      <p>
+        Data Ważności:
+        <input type="text" name="waznoscKarty" maxlength="5" placeholder="XX-XX" />
+        CCV:
+        <input type="text" name="ccvNum" maxlength="3" placeholder="XXX" />
+      </p>
+    }
+    <p>{{ paymentMethod() }}</p>
+  </aside>
+</main>
