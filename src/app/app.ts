@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProductListComponent } from './product-list/product-list';
 import { CartComponent } from './cart/cart';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Menu } from './menu/menu';
+import { StoreService } from './store';
 
 @Component({
   selector: 'app-root',

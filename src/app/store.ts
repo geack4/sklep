@@ -13,6 +13,8 @@ export class StoreService {
 
   cart: any[] = [];
 
+  order: any = {};
+
   addProductToCart(product: any) {
     const existingProduct = this.cart.find((item) => item.product.id === product.id);
 

@@ -1,0 +1,77 @@
+main {
+  display: flex;
+  color: var(--darkest-color);
+}
+aside {
+  width: 50%;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.3);
+}
+.form p {
+  display: flex;
+  flex-wrap: wrap;
+}
+label {
+  margin-left: 5px;
+}
+
+.product {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 13px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px var(--primary-color);
+  background-color: var(--light-color);
+}
+
+.product .price {
+  font-weight: 700;
+}
+
+.sum {
+  font-size: 18px;
+  font-weight: 900;
+}
+.sum .price {
+  text-decoration: underline;
+}
+
+button[type='submit'] {
+  all: unset;
+  padding: 14px;
+  border-radius: 15px;
+  border: 4px solid var(--halfdark-color);
+  background-color: var(--halflight-color);
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 300ms;
+}
+button[type='submit']:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba($color: #000000, $alpha: 0.3);
+  border-color: var(--primary-color);
+  background-color: var(--light-color);
+}
+button[type='submit']:disabled {
+  border-color: var(--darkest-color);
+  background-color: var(--halfdark-color);
+  transform: translateY(2px);
+  box-shadow: none;
+  color: var(--halflight-color);
+}
+
+input {
+  background-color: var(--light-color);
+  padding: 3px;
+  border-radius: 8px;
+  border: 2px solid var(--darkest-color);
+  margin: 2px;
+}
+
+textarea {
+  background-color: var(--light-color);
+}

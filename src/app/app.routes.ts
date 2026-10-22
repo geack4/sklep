@@ -4,6 +4,7 @@ import { ProductPage } from './product-page/product-page';
 import { KoszykPage } from './koszyk-page/koszyk-page';
 import { SiteNotFound } from './site-not-found/site-not-found';
 import { PaymentPage } from './payment-page/payment-page';
+import { OrderSummary } from './order-summary/order-summary';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,10 @@ export const routes: Routes = [
   {
     path: 'payment',
     component: PaymentPage,
+  },
+  {
+    path: 'summary',
+    component: OrderSummary,
   },
   {
     path: '**',
