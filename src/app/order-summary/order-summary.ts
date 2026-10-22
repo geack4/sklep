@@ -9,11 +9,12 @@ import { StoreService } from '../store';
 })
 export class OrderSummary {
   store = inject(StoreService);
+  order = this.store.order;
   ngOnDestroy() {
-    this.store.order = {};
+    this.order = {};
   }
   ngOnInit() {
     console.log('order summary');
-    console.log(this.store.order);
+    console.log(this.order);
   }
 }

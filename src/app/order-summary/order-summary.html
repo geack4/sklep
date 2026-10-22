@@ -1,1 +1,29 @@
-<p>order-summary works!</p>
+<main>
+  <h2>Podsumowanie</h2>
+  <p>
+    Kupujący <span class="cap dane">{{ order.imie }}</span>
+    <span class="cap dane">order.nazwisko</span>
+  </p>
+  <p>
+    Kontakt: tel. <span class="dane">{{ order.telefon }}</span> E-mail:
+    <span class="dane">{{ order.email }}</span>
+  </p>
+  <p>
+    Adres:
+    <span class="dane"
+      ><span class="cap"> {{ order.miasto }}</span> {{ order.kodPocztowy }} {{ order.ulica }}
+      {{ order.numerDomu }}
+    </span>
+  </p>
+  <p>
+    Uwagi: <span class="dane">{{ order.uwagi }}</span>
+  </p>
+  <p>
+    Płatność:
+    @if (order.payment.type == 'card') {
+      kartą
+    } @else if (order.payment.type == 'blik') {
+      BLIK
+    }
+  </p>
+</main>
