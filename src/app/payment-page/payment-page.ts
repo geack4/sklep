@@ -41,6 +41,7 @@ export class PaymentPage {
         cardNumber?: string;
         cardExpiry?: string;
         ccv?: string;
+        amount?: number;
       },
     };
   }
@@ -66,6 +67,8 @@ export class PaymentPage {
 
     if (this.dane.payment.type) {
       this.dane.time = Date.now().toString();
+      this.dane.payment.amount = this.store.getTotal();
+      this.store.codeUsed = null;
       console.log(this.dane);
       this.store.order = this.dane;
       console.log('order ', this.store.order);

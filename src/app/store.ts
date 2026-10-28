@@ -11,6 +11,13 @@ export class StoreService {
     { id: 4, name: 'Słuchawki', price: 149, img: 'sluchawki.jpg' },
   ];
 
+  codes = [
+    { code: '123456', mode: 'percantage', amount: 0.1 },
+    { code: '654321', mode: 'flat', amount: 10 },
+  ];
+
+  codeUsed: any = null;
+
   cart: any[] = [];
 
   order: any = {};
@@ -44,6 +51,25 @@ export class StoreService {
   }
 
   getTotal() {
-    return this.cart.reduce((sum, item) => sum + item.product.price * item.count, 0);
+    var sum = this.cart.reduce((sum, item) => sum + item.product.price * item.count, 0);
+    var discount = 0;
+    var finalSum = sum;
+    if (this.codeUsed) {
+      discount = this.codeUsed.amount;
+      if (this.codeUsed.mode === 'percantage') finalSum = sum - sum * discount;
+      else if (this.codeUsed.mode === 'flat') finalSum = sum - discount;
+    }
+    return Math.max(finalSum, sum / 2);
+  }
+
+  getDiscount() {
+    var sum = this.cart.reduce((sum, item) => sum + item.product.price * item.count, 0);
+    var discount = 0;
+    if (this.codeUsed) {
+      discount = this.codeUsed.amount;
+      if (this.codeUsed.mode === 'percantage') discount = sum * discount;
+      else if (this.codeUsed.mode === 'flat') discount = discount;
+    }
+    return discount;
   }
 }

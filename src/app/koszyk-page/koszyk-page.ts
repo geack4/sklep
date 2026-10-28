@@ -13,4 +13,21 @@ import { StoreService } from '../store';
 })
 export class KoszykPage {
   store = inject(StoreService);
+
+  codeError = false;
+
+  checkCode(rabat: string) {
+    const foundCode = this.store.codes.find((item) => item.code === rabat);
+    if (foundCode) {
+      this.store.codeUsed = foundCode;
+      this.codeError = false;
+    } else {
+      this.codeError = true;
+      this.store.codeUsed = null;
+    }
+  }
+
+  ngOnInit() {
+    this.codeError = false;
+  }
 }

@@ -35,7 +35,16 @@ body {
   background-color: grey !important;
 }
 
+.error {
+  color: var(--tame-red);
+}
+
+.accepted {
+  color: var(--tame-green);
+}
+
 :root {
+  --really-dark: #1c242b;
   --darkest-color: #34424e;
   --dark-color: #536878;
   --halfdark-color: #668195;
@@ -45,4 +54,5 @@ body {
   --lighter-color: #dfe8ef;
   --tame-red: #df5d5d;
   --dark-red: #b14646;
+  --tame-green: rgb(109, 216, 109);
 }

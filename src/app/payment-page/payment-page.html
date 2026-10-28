@@ -11,10 +11,28 @@
 
     <article>
       @for (item of store.cart; track $index) {
-        <p class="product">
+        <p class="product podsumowanieItem">
           {{ item.product.name }}
           <span class="price">{{ item.product.price }} zł</span> x{{ item.count }}
           <span class="price"> ({{ item.product.price * item.count }} zł)</span>
+        </p>
+      }
+      @if (this.store.codeUsed) {
+        <p id="rabat" class="podsumowanieItem">
+          Rabat
+          <span class="price"
+            >-
+            @if (this.store.codeUsed.mode == 'percantage') {
+              {{ this.store.codeUsed.amount * 100 }}
+              %
+            } @else if (this.store.codeUsed.mode == 'flat') {
+              {{ this.store.codeUsed.amount }}
+              zł
+            }
+          </span>
+          @if (this.store.codeUsed.mode == 'percantage') {
+            - Kwota zniżki <span class="price">{{ store.getDiscount() }}zł</span>
+          }
         </p>
       }
     </article>
