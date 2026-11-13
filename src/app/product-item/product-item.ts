@@ -17,6 +17,7 @@ export class ProductItemComponent {
 
   store = inject(StoreService);
 
+  // sprawdź czy dodaje dokoszyka
   dodaj() {
     this.store.addProductToCart(this.product);
   }

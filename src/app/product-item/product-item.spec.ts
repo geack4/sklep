@@ -1,21 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductItem } from './product-item';
+import { render, screen } from '@testing-library/angular';
 
 describe('ProductItem', () => {
-  let component: ProductItem;
-  let fixture: ComponentFixture<ProductItem>;
+  it('wyświetla napis sklep w headerze', async () => {
+    await render(ProductItem);
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ProductItem],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(ProductItem);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(screen.getByText(/sklep/i)).toBeTruthy();
   });
 });
